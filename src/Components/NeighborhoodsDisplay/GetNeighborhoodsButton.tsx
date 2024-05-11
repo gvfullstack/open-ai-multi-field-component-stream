@@ -11,7 +11,7 @@ const GetNeighborhoodSuggestions: React.FC<any> = (props) => {
   const [dest, setDest] = useRecoilState(destination);
   const [neighborhoodRecommendationsArr, setNeighborhoodRecommendationsArr] = useRecoilState(neighborhoodRecommendationList);
   const { publicRuntimeConfig } = getConfig();
-  const baseUrl = publicRuntimeConfig.BASE_URL;
+  // const baseUrl = publicRuntimeConfig.BASE_URL;
   let disabled = !dest ? true : false;
   const neighborhoodButtonText = "generate neighborhood suggestions"
   const generateResponse = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
