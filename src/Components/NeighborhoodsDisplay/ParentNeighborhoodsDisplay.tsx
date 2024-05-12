@@ -10,8 +10,8 @@ const ParentNeighborhoodSection = (props: any) => {
       <div style={{ padding: '10px' }}>
             <div>
                 <DestinationInputBar/>
-                <NeighborhoodRecommendations/>
                 <GetNeighborhoodSuggestions/>
+                <NeighborhoodRecommendations/>
             </div>    
       </div>
     </div>

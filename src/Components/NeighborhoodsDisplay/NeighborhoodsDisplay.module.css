@@ -12,7 +12,7 @@
 }
 
 .createItineraryButton{
-    background-color: #FC4869;
+    background-color: #ac0000;
     border: none;
     color: #F3EFEF;
     padding: 10px 25px;
@@ -29,7 +29,7 @@
 }
 
 .disabled{
-    background-color: #FF7890;
+    background-color: #a83e3e;
 }
 
 p.styles.heading{
@@ -60,23 +60,24 @@ p.styles.heading{
   }
   
   .card {
-    background-color: #fff;
+    background-color: rgb(42, 42, 42);
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
     max-width: 440px;
     width: 100%;
     box-sizing: border-box;
     font-family: 'Roboto';
     transition: background-color 0.3s;
     cursor: pointer;
+    /* color: rgb(69, 68, 68); */
   }
 
 
   .card:hover {
-    background-color: #eee;
+    background-color: #474747;
     position: relative;
   }
   

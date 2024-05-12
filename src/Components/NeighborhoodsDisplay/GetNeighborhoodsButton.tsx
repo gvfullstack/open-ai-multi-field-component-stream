@@ -13,7 +13,6 @@ const GetNeighborhoodSuggestions: React.FC<any> = (props) => {
   const { publicRuntimeConfig } = getConfig();
   // const baseUrl = publicRuntimeConfig.BASE_URL;
   let disabled = !dest ? true : false;
-  const neighborhoodButtonText = "generate neighborhood suggestions"
   const generateResponse = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
     e.preventDefault();
     setNeighborhoodRecommendationsArr(prev => {
@@ -22,8 +21,9 @@ const GetNeighborhoodSuggestions: React.FC<any> = (props) => {
     });
 
     const prompt = `Provide the top Neighborhoods in ${dest} for tourists to explore. The AI should generate objects that includes a rating, title, and description. The rating for each neighborhood can be either "Top Match" or "Good Match" depending on compatibility. Response JSON Object Format is: {"rating": "Top Match", "title": "...", "description": "This is a great option for you because..."}; Another JSON object should follow if there are more suggestions. I will format the objects into proper JSON, only provide the objects.`;
+
     
-    const response = await fetch('http://localhost:3001/api/GPTRequest', {
+    const response = await fetch('http://localhost:3000/api/GPTRequest', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,8 @@ const GetNeighborhoodSuggestions: React.FC<any> = (props) => {
     });
 
     if (!response.ok) {
-      throw new Error(response.statusText);
+      console.log('response is not ok:', response)
+      // throw new Error(response.statusText);
     }
     // This data is a ReadableStream
     const data = response.body;
@@ -117,7 +118,7 @@ const GetNeighborhoodSuggestions: React.FC<any> = (props) => {
 
   return (
     <div className={styles.createItineraryButtonContainer}>
-       <button className={`${styles.createItineraryButton} ${disabled ? styles.disabled : ""}`} disabled={disabled} onClick={generateResponse}>{neighborhoodButtonText}</button>
+       <button className={`${styles.createItineraryButton} ${disabled ? styles.disabled : ""}`} disabled={disabled} onClick={generateResponse}>generate neighborhood suggestions</button>
     </div>
   );
 };
