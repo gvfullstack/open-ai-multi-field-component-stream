@@ -20,7 +20,7 @@ export default async function POST(req:  Request): Promise<Response> {
   let response1:string | undefined = "";
 
   const payload: OpenAIStreamPayload = {
-    model: "gpt-3.5-turbo-0613",
+    model: "gpt-3.5-turbo-0125",
     messages: [{ role: "user", content: prompt }],
     temperature: 0.7,
     top_p: 1,

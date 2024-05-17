@@ -23,7 +23,7 @@ const GetNeighborhoodSuggestions: React.FC<any> = (props) => {
     const prompt = `Provide the top Neighborhoods in ${dest} for tourists to explore. The AI should generate objects that includes a rating, title, and description. The rating for each neighborhood can be either "Top Match" or "Good Match" depending on compatibility. Response JSON Object Format is: {"rating": "Top Match", "title": "...", "description": "This is a great option for you because..."}; Another JSON object should follow if there are more suggestions. I will format the objects into proper JSON, only provide the objects.`;
 
     
-    const response = await fetch('http://localhost:3000/api/GPTRequest', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/GPTRequest`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

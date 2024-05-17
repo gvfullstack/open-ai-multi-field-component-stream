@@ -35,7 +35,7 @@ Go to the "Settings" tab.
 Scroll down to the "Environment Variables" section.
 Add the following environment variables as needed:
 OPENAI_API_KEY: Your OpenAI API key.
-BASE_URL: The base URL of your deployment (this will be provided by Vercel after your project is deployed).
+NEXT_PUBLIC_BASE_URL: The base URL of your deployment (this will be provided by Vercel after your project is deployed).  For the development environment this should be set to http://localhost:3000/. Ensure to prefix with NEXT_PUBLIC_ to ensure next.js is able to expose this environment variable to the front end. 
 Step 4: Deploy Your Project
 Vercel automatically deploys your project when you push changes to the linked repository. For the initial deployment, Vercel will start the process immediately after you import your project.
 
